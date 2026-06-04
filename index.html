@@ -5,13 +5,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up Portal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            ;
+        }
+
+        main {
+            background-color: rgb(209, 225, 225);
+            border: 2px solid black;
+            padding: 40px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 50px;
+            border-radius:15px;
+        }
+
+        h1 {
+            font-size: 26px;
+            margin-bottom: 6px;
+            color: #2c2c2c;
+            letter-spacing: 1px;
+        }
+
+        .subTitle {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 30px;
+
+        }
+
+        .form-grp {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #2c2c2c;
+            letter-spacing: 1px;
+            ;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            background-color: #f9f4f4;
+        }
+
+        .error_msg {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .check_box {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .btn_submit {
+            width: 100%;
+            padding: 10px;
+            background-color: #2c2c2c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+
+        }
+
+        .btn_submit:hover {
+            background-color: #555;
+        }
+
+        .success_msg {
+            margin-top: 20px;
+            text-align: center;
+            ;
+        }
+
+        hr{
+            border:none;
+            border-top:1px solid #ccc;
+            margin: 20px 0
+        }
+        .resend_sec {
+            text-align: center;
+        }
+        .resend_sec p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        #resend_btn{
+            padding: 10px 20px;
+            background-color: #f4f1eb;
+            font-size: 14px;
+            cursor: pointer;;
+        }
+    </style>
 </head>
 
 <body>
     <main>
+        <h1>Sign-up Portal</h1>
+        <p class="subTitle">Create your student account</p>
 
+        <form id="signpF">
+            <div class="form-grp">
+                <label for="username">Username: </label>
+                <input type="text" id="username" name="username" placeholder="sphesh_dywili">
+                <span class="error_msg" id="username_error"></span>
+            </div>
+
+            <div class="form-grp">
+                <label for="email">Email: </label>
+                <input type="email" id="email" name="username" placeholder="sphesh959@gmail.com">
+                <span class="error_msg" id="email_error"></span>
+            </div>
+
+            <div class="form-grp">
+                <label for="password">Password: </label>
+                <input type="password" id="password" name="password" placeholder="at 8 characters">
+                <span class="error_msg" id="password_error"></span>
+            </div>
+
+            <div class="form-grp">
+                <div class="check_box">
+                    <input type="checkbox" id="terms" style="cursor: pointer;">
+                    <label for="terms">I agree to the Terms and Conditions</label>
+                </div>
+                <span class="error_msg" id="terms_error"></span>
+            </div>
+
+            <button type="submit" class="btn_submit">Create Account</button>
+
+            <div class="success_msg" id="success_msg">
+                Account created successfully!
+            </div>
+        </form>
+
+        <hr>
+
+        <div class="resend_sec">
+            <p>
+                Didn't receive a verification email?
+            </p>
+            <button id="resend_btn" disabled>Resend in 10s</button>
+        </div>
     </main>
-    
+
     <script src="validation.js"></script>
     <script src="async.js"></script>
 </body>
