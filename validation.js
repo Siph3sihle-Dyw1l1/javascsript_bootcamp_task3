@@ -53,10 +53,10 @@ function validateForm() {
     }
 
     if (isValid) {
-        document.getElementById("success_message").style.display = "block";
+        document.getElementById("success_msg").style.display = "block";
 
     } else {
-        document.getElementById("success_message").style.display = "none";
+        document.getElementById("success_msg").style.display = "none";
     }
 
 }
@@ -76,4 +76,4 @@ let timer = setInterval(function () {
         resend_btn.disabled = false;
         resend_btn.textContent = "Resend Verification";
     }
-},1000);
+}, 1000);
